@@ -1,0 +1,17 @@
+.not-found {
+  top: 40%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+}
+
+.not-found h1 {
+  font-family: 'Cabin Sketch', cursive;
+  color: white;
+  width: 100%;
+  font-size: 120px;
+  margin: 0px;
+  line-height: normal;
+}
