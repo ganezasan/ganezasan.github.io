@@ -17,6 +17,18 @@ function Header() {
               <li className="nav-item active">
                 <Link to='/' className='nav-item nav-link'>About</Link>
               </li>
+              <li className="nav-item active">
+                <Link to='/works' className='nav-item nav-link'>Works</Link>
+              </li>
+              <li className="nav-item active">
+                <Link to='/talks' className='nav-item nav-link'>Talks</Link>
+              </li>
+              <li className="nav-item active">
+                <a target='_blank' href='https://github.com/ganezasan' className='nav-item nav-link'>Github</a>
+              </li>
+              <li className="nav-item active">
+                <a target='_blank' href='https://twitter.com/ganezasan' className='nav-item nav-link'>Twitter</a>
+              </li>
             </ul>
           </div>
         </nav>
