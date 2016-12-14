@@ -6,6 +6,7 @@ import {
   About,
   NotFound,
   Header,
+  Footer,
   Works,
 } from './containers';
 
@@ -21,6 +22,7 @@ class App extends Component {
               <Match pattern="/" exactly component={() => <About router={router} />} />
               <Match pattern="/works" exactly component={() => <Works router={router} />} />
             </div>
+            <Footer />
           </div>
         )}
       </BrowserRouter>
