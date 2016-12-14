@@ -8,6 +8,7 @@ import {
   Header,
   Footer,
   Works,
+  Talks,
 } from './containers';
 
 class App extends Component {
@@ -20,7 +21,8 @@ class App extends Component {
             <div className="content">
               <Miss component={NotFound} />
               <Match pattern="/" exactly component={() => <About router={router} />} />
-              <Match pattern="/works" exactly component={() => <Works router={router} />} />
+              <Match pattern="/works" component={() => <Works router={router} />} />
+              <Match pattern="/talks" component={() => <Talks router={router} />} />
             </div>
             <Footer />
           </div>
