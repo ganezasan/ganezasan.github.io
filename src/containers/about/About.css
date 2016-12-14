@@ -1,25 +1,9 @@
-.start .app-box {
-  top: 20%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  margin: auto;
+.about .image-box {
+  text-align: center;
 }
 
-.start .title {
-  font-family: 'Cabin Sketch', cursive;
-  color: white;
-  width: 100%;
-  font-size: 120px;
-  margin: 0px;
-  line-height: normal;
-}
-
-.start .nazoneko-icon {
-  width: 160px;
-}
-
-.start .start-button {
-  margin-top: 30px;
+.about .profile {
+  width: 10em;
+  height: 10em;
+  margin: 3em;
 }
