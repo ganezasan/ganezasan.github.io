@@ -5,7 +5,8 @@ import './App.css';
 import {
   About,
   NotFound,
-  Header
+  Header,
+  Works,
 } from './containers';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
             <div className="content">
               <Miss component={NotFound} />
               <Match pattern="/" exactly component={() => <About router={router} />} />
+              <Match pattern="/works" exactly component={() => <Works router={router} />} />
             </div>
           </div>
         )}
