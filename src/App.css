@@ -1,0 +1,5 @@
+.mark-down p {
+  line-height: 1.65 !important;
+  letter-spacing: .1em !important;
+  text-align: justify;
+}
