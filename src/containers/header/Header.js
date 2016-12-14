@@ -10,12 +10,12 @@ function Header() {
         <nav>
           <div className="clearfix">
             <button className="navbar-toggler float-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#bd-main-nav" aria-controls="bd-main-nav" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <Link to='/' className='navbar-brand hidden-sm-up'>About</Link>
+            <Link to='/' className='navbar-brand hidden-sm-up'>TAKAYUKI ITO</Link>
           </div>
           <div className="collapse navbar-toggleable-xs" id="bd-main-nav">
             <ul className="nav navbar-nav">
               <li className="nav-item active">
-                <Link to='/' className='nav-item nav-link'>About</Link>
+                <Link to='/' className='nav-item nav-link'>TAKAYUKI ITO</Link>
               </li>
               <li className="nav-item active">
                 <Link to='/works' className='nav-item nav-link'>Works</Link>
