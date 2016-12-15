@@ -23,3 +23,14 @@ h2 {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
+
+.tag {
+  color: gray;
+  font-weight: normal;
+  margin-right: .1em;
+}
+
+.tag-default {
+  background-color: white;
+  border: 1px solid gray;
+}
