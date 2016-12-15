@@ -1,0 +1,33 @@
+.card {
+  float: left;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0 !important;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card .icon {
+  height: 100px;
+  margin: 3em auto;
+  display: block;
+  border-radius: 15px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+.tag-box {
+  margin-bottom: .5em;
+}
