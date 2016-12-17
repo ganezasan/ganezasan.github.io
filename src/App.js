@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Match, Miss } from 'react-router';
+import ReactGA from 'react-ga';
+ReactGA.initialize(process.env.REACT_APP_GAID);
 import './App.css';
 
 import {
@@ -11,10 +13,15 @@ import {
   Talks,
 } from './containers';
 
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
+
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <HashRouter onUpdate={logPageView}>
         {({ router }) => (
           <div className="container">
             <Header />
