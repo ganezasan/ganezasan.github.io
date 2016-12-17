@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { HashRouter, Match, Miss } from 'react-router';
 import './App.css';
 
 import {
@@ -14,7 +14,7 @@ import {
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         {({ router }) => (
           <div className="container">
             <Header />
@@ -27,7 +27,7 @@ class App extends Component {
             <Footer />
           </div>
         )}
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
