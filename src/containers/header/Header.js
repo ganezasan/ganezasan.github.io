@@ -17,6 +17,25 @@ class Header extends Component {
     const { expand } = this.state;
     const expandClassName = expand ? 'in' : '';
 
+    const links = [
+      {
+        to: '/',
+        title: 'TAKAYUKI ITO'
+      },
+      {
+        to: '/works',
+        title: 'Works'
+      },
+      {
+        to: '/talks',
+        title: 'Talks'
+      },
+      {
+        to: '/bookshelf',
+        title: 'Bookshelf'
+      }
+    ];
+
     return (
       <header className="navbar navbar-light navbar-static-top bd-navbar">
         <nav>
@@ -36,22 +55,15 @@ class Header extends Component {
           </div>
             <div className={`collapse ${expandClassName} navbar-toggleable-xs`} id="bd-main-nav" aria-expanded={expand}>
               <ul className="nav navbar-nav">
-                <li className="nav-item">
-                  <Link to='/' className='nav-item nav-link'>TAKAYUKI ITO</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to='/works' className='nav-item nav-link'>Works</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to='/talks' className='nav-item nav-link'>Talks</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to='/bookshelf' className='nav-item nav-link'>Bookshelf</Link>
-                </li>
-                <li className="nav-item">
+                {links.map(({to, title}, index) => (
+                  <li key={index} className="nav-item" onClick={() => this.showLinks(expand)}>
+                    <Link to={to} className='nav-item nav-link'>{title}</Link>
+                  </li>
+                ))}
+                <li className="nav-item" onClick={() => this.showLinks(expand)}>
                   <a target='_blank' href='https://github.com/ganezasan' className='nav-item nav-link'>Github</a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={() => this.showLinks(expand)}>
                   <a target='_blank' href='https://twitter.com/ganezasan' className='nav-item nav-link'>Twitter</a>
                 </li>
               </ul>
@@ -61,16 +73,5 @@ class Header extends Component {
     );
   }
 }
-
-// <Navbar id="main-nav" toggleButton toggleNavKey={1} staticTop={true} fluid={true} >
-//   <Nav key={1}>
-//     <NavItem key={1} href="/movies">Movies</NavItem>
-//     <NavItem key={2} href="/concerts">Concerts</NavItem>
-//     <NavItem key={3} href="/plays">Plays</NavItem>
-//     <Nav className="pull-right">
-//       <NavItem key={1} href="#"><i className="fa fa-sign-in"></i> Login</NavItem>
-//     </Nav>
-//   </Nav>
-// </Navbar>
 
 export default Header;
