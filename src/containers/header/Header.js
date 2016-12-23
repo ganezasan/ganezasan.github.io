@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Link } from 'react-router';
 import './Header.css';
+
+const propTypes = {
+  location: PropTypes.object,
+};
 
 class Header extends Component {
   state={
@@ -14,6 +18,7 @@ class Header extends Component {
   }
 
   render() {
+    const { pathname } = this.props.location;
     const { expand } = this.state;
     const expandClassName = expand ? 'in' : '';
 
@@ -36,6 +41,7 @@ class Header extends Component {
       }
     ];
 
+
     return (
       <header className="navbar navbar-light navbar-static-top bd-navbar">
         <nav>
@@ -57,7 +63,7 @@ class Header extends Component {
               <ul className="nav navbar-nav">
                 {links.map(({to, title}, index) => (
                   <li key={index} className="nav-item" onClick={() => this.showLinks(expand)}>
-                    <Link to={to} className='nav-item nav-link'>{title}</Link>
+                    <Link to={to} className='nav-item nav-link' disabled={pathname === to && 'disabled'}>{title}</Link>
                   </li>
                 ))}
                 <li className="nav-item" onClick={() => this.showLinks(expand)}>
@@ -73,5 +79,7 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = propTypes;
 
 export default Header;
