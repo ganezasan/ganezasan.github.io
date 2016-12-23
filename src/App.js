@@ -13,23 +13,23 @@ import {
   Talks,
 } from './containers';
 
-function logPageView() {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
+function logPageView(pathname) {
+  ReactGA.set({ page: pathname });
+  ReactGA.pageview(pathname);
 }
 
 class App extends Component {
   render() {
     return (
-      <HashRouter onUpdate={logPageView}>
-        {({ router }) => (
+      <HashRouter onChange={logPageView}>
+        {({ router, location }) => (
           <div className="container">
-            <Header />
+            <Header location={location}/>
             <div className="content">
               <Miss component={NotFound} />
-              <Match pattern="/" exactly component={() => <About router={router} />} />
-              <Match pattern="/works" component={() => <Works router={router} />} />
-              <Match pattern="/talks" component={() => <Talks router={router} />} />
+              <MatchWithGA pattern="/" exactly component={() => <About router={router} />}/>
+              <MatchWithGA pattern="/works" component={() => <Works router={router} />}/>
+              <MatchWithGA pattern="/talks" component={() => <Talks router={router} />}/>
             </div>
             <Footer />
           </div>
@@ -38,5 +38,12 @@ class App extends Component {
     );
   }
 }
+
+const MatchWithGA = ({ component: Component, ...rest }) => (
+  <Match {...rest} render={props => {
+    logPageView(props.pathname);
+    return <Component {...props}/>;
+  }}/>
+);
 
 export default App;
