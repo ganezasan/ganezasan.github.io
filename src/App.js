@@ -41,7 +41,9 @@ class App extends Component {
 
 const MatchWithGA = ({ component: Component, ...rest }) => (
   <Match {...rest} render={props => {
-    logPageView(props.pathname);
+    if(process.env.NODE_ENV === 'production') {
+      logPageView(props.pathname);
+    }
     return <Component {...props}/>;
   }}/>
 );
