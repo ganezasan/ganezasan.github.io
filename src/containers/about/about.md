@@ -1,7 +1,3 @@
-## Contact
-Email:
-[istaka12@gmail.com](mailto:istaka12@gmail.com)
-
 ## About me
 私はエンジニアであり、株式会社チイキットの代表をしています。
 ここ3年ほどはずっとリモートワークをしていて、家かカフェで仕事をしています。
